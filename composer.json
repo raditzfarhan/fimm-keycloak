@@ -1,0 +1,55 @@
+{
+    "name": "raditzfarhan/fimm-keycloak",
+    "description": "A simple Keycloak package to manage access level for FIMM system.",
+    "keywords": [
+        "farhan",
+        "fimm",
+        "keycloak",
+        "fimm-keycloak"
+    ],
+    "homepage": "https://github.com/raditzfarhan/fimm-keycloak",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Farhan",
+            "email": "raditzfarhan@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RaditzFarhan\\FimmKeycloak\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RaditzFarhan\\FimmKeycloak\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RaditzFarhan\\FimmKeycloak\\FimmKeycloakServiceProvider"
+            ],
+            "aliases": {
+                "FimmKeycloak": "RaditzFarhan\\FimmKeycloak\\FimmKeycloakFacade"
+            }
+        }
+    }
+}
